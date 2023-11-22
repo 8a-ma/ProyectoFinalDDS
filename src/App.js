@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import './sytle.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import Inicio from './Pages/Inicio';
+import AboutIt from './Pages/AboutIt';
+import Contacto from './Pages/Contacto';
+import Carrito from './Pages/Carrito';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Inicio />} />
+        <Route path="nosotros" element={<AboutIt />} />
+        <Route path="contacto" element={<Contacto />} />
+        <Route path="carrito" element={<Carrito />} />
+      </Routes  >
+    </BrowserRouter>
   );
 }
 
