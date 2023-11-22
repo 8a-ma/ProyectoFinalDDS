@@ -4,6 +4,8 @@ import Carta from '../components/Carta';
 import Footer from '../components/Footer';
 
 import React, { useEffect, useState } from "react";
+
+
 import axios from "axios";
 import * as API from '../const.js';
 
@@ -27,7 +29,7 @@ function Inicio(){
         setMovies(results);
         setMovie(results[0]);
     }
-
+    // Funcion para buscar peliculas
     const searchMovies = (e)=>{
         e.preventDefault();
         fetchMovies(searchKey)
