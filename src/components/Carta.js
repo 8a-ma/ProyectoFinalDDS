@@ -1,17 +1,22 @@
 import { useNavigate } from "react-router-dom";
 
 
+
 function Carta(props) {
     const navigate = useNavigate()
 
-    function handleClick() {
-        navigate('/pelicula');
+    function handleClick(informacion) {
+        navigate('/pelicula', {
+            state:{
+                info:informacion
+            }
+        });
         
     }
     return (
         <div key={props.id} className="col-5">
-            <img src={props.src} className="img-fluid w-75" alt='...' onClick={handleClick}/>
-            <p className="text-center"> {props.name} </p>
+            <img src={props.src} className="img-fluid w-75" alt='...' onClick={() => handleClick(props.movie)}/>
+            <p className="text-center"> {props.title} </p>
         </div>
     );
 }

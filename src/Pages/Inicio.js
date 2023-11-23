@@ -48,7 +48,7 @@ function Inicio(){
             <div className="container text-center p-1">
                 <div className="row mx-auto pt-1">
                     {movies.map((movie)=>(
-                        <Carta id={movie.id} name={movie.title} src={`${API.URL_IMAGE + movie.poster_path}`} />
+                        <Carta id={movie.id} title={movie.title} src={`${API.URL_IMAGE + movie.poster_path}`} movie={movie} />
                     ))}
                 </div>
             </div>
