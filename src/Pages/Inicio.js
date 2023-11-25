@@ -12,6 +12,7 @@ import * as API from '../const.js';
 function Inicio(){
 
     //Variables de estado
+    
     const [movies, setMovies] = useState([]);
     const [searchKey, setSearchKey] = useState("");
     const [movie, setMovie] = useState({title: "Loading Movies"}); 
@@ -50,7 +51,7 @@ function Inicio(){
         e.preventDefault();
         fetchMovies(searchKey)
     }
-
+    
     
 
     useEffect(()=>{
@@ -59,11 +60,13 @@ function Inicio(){
 
 
 
-
     return (
+        
         <div>
-            <Header />
-            <Navbar searchMovies={searchMovies} setSearchKey={setSearchKey} />
+            <div className='sticky-top'>
+                <Header />
+                <Navbar searchMovies={searchMovies} setSearchKey={setSearchKey} />
+            </div>
             <div className="container text-center p-1">
                 <div className="row mx-auto pt-1">
                 {movies.map((movie)=>(
@@ -74,6 +77,7 @@ function Inicio(){
             </div>
             <Footer />
         </div>
+        
     );
 }
 

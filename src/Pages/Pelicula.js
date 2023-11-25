@@ -1,7 +1,7 @@
 import Header from '../components/Header';
 import Navbarsin from '../components/Navbarsin';
 import Footer from '../components/Footer';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom'; // Modifica esta línea
 
 import * as API from '../const.js';
 import React, { useEffect, useState } from "react";
@@ -10,11 +10,11 @@ import axios from "axios";
 function Pelicula() {
 
     const location = useLocation();
+    const navigate = useNavigate(); // Modifica esta línea
     const movie = location.state.info;
     const [genres, setGenres] = useState([]);
     const [trailer, setTrailer] = useState("");
-    const [runtime, setRuntime] = useState(0); // Agrega esta línea
-
+    const [runtime, setRuntime] = useState(0); 
 
     useEffect(() => {
         const fetchMovieDetails = async () => {
@@ -25,7 +25,7 @@ function Pelicula() {
             });
     
             setGenres(movieData.genres.map(genre => genre.name));
-            setRuntime(movieData.runtime); // Agrega esta línea
+            setRuntime(movieData.runtime); 
     
             const { data: { results: videos } } = await axios.get(`${API.API_URL}/movie/${movie.id}/videos`, {
                 params: {
@@ -43,8 +43,10 @@ function Pelicula() {
         fetchMovieDetails();
     }, [movie.id]);
     
+    const handleBuy = () => {
+        navigate('/carrito', { state: { selectedMovie: movie } });
+    }
     
-
     return(
         <div>
             <Header />
@@ -54,7 +56,11 @@ function Pelicula() {
                     <div className='col text-center'>
                         <p className='h1 text-white fw-light'>{movie.title}</p>
                         <img src={`${API.URL_IMAGE + movie.poster_path}`} className='w-50' />
+                        <div>
+                            <button onClick={handleBuy} className="btn btn-primary mt-3">Comprar</button>
+                        </div>
                     </div>
+
                     <div className='col text-white fw-light'>
                         <div>
                             <p className="h4">Sinopsis</p>
@@ -80,17 +86,9 @@ function Pelicula() {
                             <p className='h4'>Horarios</p>
                             <p>13:00, 15:30, 19:20, 22:00</p>
                         </div>
-                        <div>
-                            <p className='h4'>Trailer</p>
-                            <p>{trailer && <iframe width="560" height="315" src={`https://www.youtube.com/embed/${trailer}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>}</p>
-                        </div>
                     </div>
-                    
-
                 </div>
-                
             </div>
-            
             <Footer />
         </div>
     );

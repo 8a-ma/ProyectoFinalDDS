@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Navbarsin(props){
+function Navbarsin(){
     return (
         <div>
             <nav className='navbar navbar-expand-lg bg-custom-nav'>
