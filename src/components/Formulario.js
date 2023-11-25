@@ -9,6 +9,17 @@ function Formulario(){
           confirmButtonText: "Aceptar"
         })
       }
+
+    const EnviarFormulario = () => {
+        const name = document.getElementById("exampleFormControlInpu12").value;
+        const mail = document.getElementById("exampleFormControlInput2").value;
+        const text = document.getElementById("exampleFormControlTextarea1").value;
+
+        if (name && mail && text){
+            mostrarAlerta();
+        }
+        
+    }
       
     return (
         <div className="container text-fluid text-start mt-3 bg-highlight rounded">
@@ -26,7 +37,7 @@ function Formulario(){
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
                 <div className="mb-3">
-                    <button class="btn btn-primary btn-outline-dark text-white" type="submit" onClick={(e) => { e.preventDefault(); mostrarAlerta(); }}>Enviar</button>
+                    <button class="btn btn-primary btn-outline-dark text-white" type="submit" onClick={(e) => { e.preventDefault(); EnviarFormulario(); }}>Enviar</button>
                 </div>
             </div>
         </div>

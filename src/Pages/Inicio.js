@@ -68,8 +68,8 @@ function Inicio(){
                 <Navbar searchMovies={searchMovies} setSearchKey={setSearchKey} />
             </div>
             
-            <div className="container text-center p-1">
-                <div className="row mx-auto pt-1">
+            <div className="container text-center mt-1">
+                <div className="row mx-auto pt-1 align-self-center">
                 {movies.map((movie)=>(
                     <Carta id={movie.id} title={movie.title} src={`${API.URL_IMAGE + movie.poster_path}`} movie={movie} cast={movie.cast} runtime={movie.runtime}/>        
                 ))}

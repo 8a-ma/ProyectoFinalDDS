@@ -20,9 +20,7 @@ function Carritop3(){
             <div>
                 <ResumenCompra />
             </div>
-            <div className='fixed-bottom'>
-                <Footer />
-            </div>
+            <Footer />
         </div>
     );
 }
