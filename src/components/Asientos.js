@@ -40,7 +40,7 @@ function Asientos() {
                 <div className="d-flex justify-content-center">
                     {Array.from({ length: 4 }, (_, i) => String.fromCharCode(65 + i)).map((fila) => (
                         <div key={fila}>
-                            {Array.from({ length: 10 }, (_, i) => i + 1).map((columna) => (
+                            {Array.from({ length: 12 }, (_, i) => i + 1).map((columna) => (
                                 <button
                                     type="button"
                                     key={`${fila}${columna}`}
@@ -55,7 +55,7 @@ function Asientos() {
                 </div>
 
                 <div className="mb-3">
-                    <button className="btn btn-primary btn-outline-dark text-white" type="submit" onClick={handleSubmit} disabled={asientos.length !== (Number(entradasAdulto) + Number(entradasNino))}>Siguiente</button>
+                    <button className="btn btn-primary btn-outline-dark text-white mt-3" type="submit" onClick={handleSubmit} disabled={asientos.length !== (Number(entradasAdulto) + Number(entradasNino))}>Siguiente</button>
                 </div>
             </div>
         </div>
