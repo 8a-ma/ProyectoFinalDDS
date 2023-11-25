@@ -67,6 +67,7 @@ function Inicio(){
                 <Header />
                 <Navbar searchMovies={searchMovies} setSearchKey={setSearchKey} />
             </div>
+            
             <div className="container text-center p-1">
                 <div className="row mx-auto pt-1">
                 {movies.map((movie)=>(

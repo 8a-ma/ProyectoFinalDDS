@@ -9,6 +9,7 @@ function Asientos() {
     const location = useLocation();
     const { pelicula, poster, entradasAdulto, entradasNino, hora } = location.state;
     const titulo = pelicula;
+    
 
     const handleAsientoClick = (fila, columna) => {
         const asientoSeleccionado = `${fila}${columna}`;

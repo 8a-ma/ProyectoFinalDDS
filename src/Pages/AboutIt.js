@@ -34,7 +34,7 @@ function AboutIt(){
                     </div>
                 </div>
             </div>
-            <div className='fixed-bottom'>
+            <div>
                 <Footer />
             </div>
         </div>

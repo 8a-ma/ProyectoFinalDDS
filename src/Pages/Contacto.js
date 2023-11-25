@@ -13,7 +13,7 @@ function Contacto(){
             <div>
                 <Formulario />
             </div>
-            <div className='fixed-bottom'>
+            <div>
                 <Footer />
             </div>
         </div>

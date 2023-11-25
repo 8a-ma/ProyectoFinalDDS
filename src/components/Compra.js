@@ -8,13 +8,18 @@ function Compra({ movies }) {
     const navigate = useNavigate();
 
     const location = useLocation();
-    const selectedMovie = location.state.selectedMovie;
-    const [pelicula, setPelicula] = useState(selectedMovie.title);
+    let selectedMovie;
+    if (location.state) {
+        selectedMovie = location.state.selectedMovie;
+    } else {
+        selectedMovie = null; // o cualquier valor por defecto que quieras asignar
+    }
+    const [pelicula, setPelicula] = useState(selectedMovie ? selectedMovie.title : "");
 
     const [hora, setHora] = useState('');
     const [entradasAdulto, setEntradasAdulto] = useState(0);
     const [entradasNino, setEntradasNino] = useState(0);
-    const [poster, setPoster] = useState(selectedMovie.poster_path);
+    const [poster, setPoster] = useState(selectedMovie ? selectedMovie.poster_path : "");
 
     
     const horarios = ['13:00', '15:30', '19:20', '22:00']; // Reemplaza esto con tus horarios
@@ -22,6 +27,8 @@ function Compra({ movies }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (pelicula && hora && entradasAdulto + entradasNino >= 1) {
+            const selectedMovie = movies.find(movie => movie.title === pelicula);
+            const poster = selectedMovie.poster_path;
             navigate('/carritop2', { state: { pelicula, poster, entradasAdulto, entradasNino, hora } });
 
         }
