@@ -46,7 +46,7 @@ function Carrito(){
             <div>
                 <Compra movies={movies} />
             </div>
-            <div>
+            <div className='fixed-bottom'>
                 <Footer />
             </div>
         </div>

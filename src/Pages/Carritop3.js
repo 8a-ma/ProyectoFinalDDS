@@ -20,7 +20,7 @@ function Carritop3(){
             <div>
                 <ResumenCompra />
             </div>
-            <div>
+            <div className='fixed-bottom'>
                 <Footer />
             </div>
         </div>

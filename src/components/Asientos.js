@@ -16,14 +16,14 @@ function Asientos() {
         if (asientos.includes(asientoSeleccionado)) {
             setAsientos(asientos.filter(asiento => asiento !== asientoSeleccionado));
         } else {
-            if (asientos.length < (entradasAdulto + entradasNino)/10) {
+            if (asientos.length < (Number(entradasAdulto) + Number(entradasNino))) {
                 setAsientos([...asientos, asientoSeleccionado]);
             }
         }
     };
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (asientos.length === (entradasAdulto + entradasNino)/10) {
+        if (asientos.length === (Number(entradasAdulto) + Number(entradasNino))) {
             navigate('/carritop3', { state: { titulo, poster, entradasAdulto, entradasNino, hora, asientos } });
         }
     };

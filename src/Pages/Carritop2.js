@@ -19,7 +19,7 @@ function Carritop2(){
             <div>
                 <Asientos />
             </div>
-            <div>
+            <div className='fixed-bottom'>
                 <Footer />
             </div>
         </div>

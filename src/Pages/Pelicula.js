@@ -51,7 +51,7 @@ function Pelicula() {
         <div>
             <Header />
             <Navbarsin />
-            <div className='container mt-3 bg-highlight rounded p-5'>
+            <div className='container my-3 bg-highlight rounded p-5'>
                 <div className='my-2 row'>
                     <div className='col text-center'>
                         <p className='h1 text-white fw-light'>{movie.title}</p>
