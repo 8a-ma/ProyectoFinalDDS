@@ -26,7 +26,7 @@ function Compra({ movies }) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (pelicula && hora && entradasAdulto + entradasNino >= 1) {
+        if (pelicula && hora && Number(entradasAdulto) + Number(entradasNino) >= 1 || Number(entradasAdulto) + Number(entradasNino) <= 40)  {
             const selectedMovie = movies.find(movie => movie.title === pelicula);
             const poster = selectedMovie.poster_path;
             navigate('/carritop2', { state: { pelicula, poster, entradasAdulto, entradasNino, hora } });
@@ -71,7 +71,7 @@ function Compra({ movies }) {
                 </div>
 
                 <div className="mb-3">
-                    <button className="btn btn-primary btn-outline-dark text-white" type="submit" onClick={handleSubmit} disabled={!pelicula || !hora || (entradasAdulto + entradasNino < 1)}>Siguiente</button>
+                    <button className="btn btn-primary btn-outline-dark text-white" type="submit" onClick={handleSubmit} disabled={!pelicula || !hora || (Number(entradasAdulto) + Number(entradasNino) < 1) || (Number(entradasAdulto) + Number(entradasNino) > 40)}>Siguiente</button>
                 </div>
             </div>
         </div>

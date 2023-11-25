@@ -38,7 +38,7 @@ function Asientos() {
                 </div>
 
                 <div className="d-flex justify-content-center">
-                    {Array.from({ length: 13 }, (_, i) => String.fromCharCode(65 + i)).map((fila) => (
+                    {Array.from({ length: 4 }, (_, i) => String.fromCharCode(65 + i)).map((fila) => (
                         <div key={fila}>
                             {Array.from({ length: 10 }, (_, i) => i + 1).map((columna) => (
                                 <button

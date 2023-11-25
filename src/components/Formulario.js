@@ -10,12 +10,17 @@ function Formulario(){
         })
       }
 
+    const validarEmail = (email) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
+
     const EnviarFormulario = () => {
         const name = document.getElementById("exampleFormControlInpu12").value;
-        const mail = document.getElementById("exampleFormControlInput2").value;
+        const mail = document.getElementById("exampleFormControlInput2");
         const text = document.getElementById("exampleFormControlTextarea1").value;
 
-        if (name && mail && text){
+        if (name && validarEmail(mail.value) && text ){
             mostrarAlerta();
         }
         
@@ -30,7 +35,7 @@ function Formulario(){
                 </div>
                 <div className="mb-3">
                     <label for="exampleFormControlInput2" class="form-label text-white">Mail</label>
-                    <input type="mail" class="form-control" id="exampleFormControlInput2" placeholder="nombre@example.com"></input>
+                    <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="nombre@example.com"></input>
                 </div>
                 <div className="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label text-white">Mensaje</label>
