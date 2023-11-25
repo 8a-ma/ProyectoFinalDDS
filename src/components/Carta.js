@@ -16,7 +16,7 @@ function Carta(props) {
     return (
         <div key={props.id} className="col-5">
             <img src={props.src} className="img-fluid w-75" alt='...' onClick={() => handleClick(props.movie)}/>
-            <p className="text-center"> {props.title} </p>
+            <p className="text-center text-white"> {props.title} </p>
         </div>
     );
 }

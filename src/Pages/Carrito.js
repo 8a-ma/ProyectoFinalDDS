@@ -1,16 +1,17 @@
 import Header from '../components/Header';
-import Navbar from '../components/Navbar';
+import Navbarsin from '../components/Navbarsin';
 import Footer from '../components/Footer';
+import ResumenCompra from '../components/ResumenCompra';
 
 function Carrito(){
     return (
         <div>
             <div>
                 <Header />
-                <Navbar />
+                <Navbarsin />
             </div>
             <div>
-                Carrito
+                <ResumenCompra />
             </div>
             <div>
                 <Footer />

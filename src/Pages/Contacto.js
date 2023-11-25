@@ -1,16 +1,17 @@
 import Header from '../components/Header';
-import Navbar from '../components/Navbar';
+import Navbarsin from '../components/Navbarsin';
 import Footer from '../components/Footer';
+import Formulario from '../components/Formulario';
 
 function Contacto(){
     return (
         <div>
             <div>
                 <Header />
-                <Navbar />
+                <Navbarsin />
             </div>
             <div>
-                Contacto
+                <Formulario />
             </div>
             <div>
                 <Footer />
