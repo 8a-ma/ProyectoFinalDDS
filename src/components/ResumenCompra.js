@@ -31,7 +31,7 @@ function ResumenCompra() {
                     <p>Función: {hora}</p>
                     <p>Boletos: {entradasAdulto} adulto, {entradasNino} niños</p>
                     <p>Asientos: {asientos.join(', ')}</p>
-                    <p class="h4">Total: ${2000*entradasAdulto + 1000*entradasNino}</p>
+                    <p class="h4">Total: ${7500*entradasAdulto + 6000*entradasNino}</p>
                     <button type="button" class="btn btn-success btn-lg" onClick={(e) => { e.preventDefault(); mostrarAlerta(); }}>Comprar</button>
                 </div>
             </div>
