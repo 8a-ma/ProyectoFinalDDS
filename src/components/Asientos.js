@@ -55,7 +55,7 @@ function Asientos() {
                 </div>
 
                 <div className="mb-3">
-                    <button className="btn btn-primary btn-outline-dark text-white" type="submit" onClick={handleSubmit} disabled={asientos.length !== (entradasAdulto + entradasNino)/10}>Siguiente</button>
+                    <button className="btn btn-primary btn-outline-dark text-white" type="submit" onClick={handleSubmit} disabled={asientos.length !== (Number(entradasAdulto) + Number(entradasNino))}>Siguiente</button>
                 </div>
             </div>
         </div>
