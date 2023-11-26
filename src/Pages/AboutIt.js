@@ -39,7 +39,7 @@ function AboutIt(){
                     </div>
                 </div>
             </div>
-            <div className=''>
+            <div className='sticky-bottom'>
                 <Footer />
             </div>
             

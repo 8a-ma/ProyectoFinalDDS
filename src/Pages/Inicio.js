@@ -70,8 +70,8 @@ function Inicio(){
             
             <div className="container text-center mt-1">
                 <div className="row mx-auto pt-1 align-self-center">
-                    <div className='bg-custom-ranking row mb-3 justify-content-center'>
-                        <p className='h2 text-white'>Aclamados por la critica</p>
+                    <div className='bg-custom-ranking row mb-3 justify-content-center rounded'>
+                        <p className='h1 text-white'>Aclamados por la critica</p>
                         {movies.slice(0,2).map((movie)=>(
                             <Carta id={movie.id} title={movie.title} src={`${API.URL_IMAGE + movie.poster_path}`} movie={movie} cast={movie.cast} runtime={movie.runtime}/> 
                         ))}
