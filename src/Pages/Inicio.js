@@ -41,7 +41,7 @@ function Inicio(){
     
                 return {...movie, cast};
             }));
-    
+            moviesWithCast.sort((a, b) => b.vote_average - a.vote_average);
             setMovies(moviesWithCast);
             setMovie(moviesWithCast[0]);
         }
@@ -70,12 +70,20 @@ function Inicio(){
             
             <div className="container text-center mt-1">
                 <div className="row mx-auto pt-1 align-self-center">
-                {movies.map((movie)=>(
-                    <Carta id={movie.id} title={movie.title} src={`${API.URL_IMAGE + movie.poster_path}`} movie={movie} cast={movie.cast} runtime={movie.runtime}/>        
-                ))}
-
+                    <div className='bg-custom-ranking row mb-3 justify-content-center'>
+                        <p className='h2 text-white'>Aclamados por la critica</p>
+                        {movies.slice(0,2).map((movie)=>(
+                            <Carta id={movie.id} title={movie.title} src={`${API.URL_IMAGE + movie.poster_path}`} movie={movie} cast={movie.cast} runtime={movie.runtime}/> 
+                        ))}
+                    </div>
+                    <div className='row justify-content-center'>
+                        {movies.slice(2).map((movie)=>(
+                                <Carta id={movie.id} title={movie.title} src={`${API.URL_IMAGE + movie.poster_path}`} movie={movie} cast={movie.cast} runtime={movie.runtime}/> 
+                            ))}
+                    </div>
                 </div>
             </div>
+            
             <Footer />
         </div>
         
